@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Today</h1>
+    <form action="/home" method="POST">
+        <input type="text" name="title" placeholder="Add a to-do">
+        <button>Add</button>
+    </form>
+    <ul>
+        <% for (let p of post) { %> 
+            <li><a href="/home/<%= p._id %>"><%= p.title %> </a></li>
+        <% } %> 
+    </ul>
+</body>
+</html>
