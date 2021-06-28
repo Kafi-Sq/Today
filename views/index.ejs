@@ -1,21 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Jomhuria&display=swap"
+        rel="stylesheet">
     <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Castoro', serif;
+        }
+
+        .container {
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 300px;
+            margin: 10px;
+            background-color: #006d77;
+            color: #edf6f9;
+        }
+
+        .header h1 {
+            margin: 0 10px;
+        }
+
+        .header input {
+            width: 210px;
+            padding: 5px;
+            margin: 0 0 0 10px;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .header button {
+            padding: 5px 15px;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .body {
+            border: 1px solid #ffddd2;
+            margin: 10px 11px;
+            border-radius: 5px;
+            background-color: #83c5be;
+        }
+
+        .body ol {
+            list-style-type: none;
+            margin: 0 15px;
+            padding: 0;
+        }
+        .body li {
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #edf6f9;
+        }
+        .body li:last-child {
+            border-bottom: none;
+        }
+        .body li:hover{
+            background-color: #e29578;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .body a {
+            margin: 5px;
+            text-decoration: none;
+            color: #edf6f9;
+            
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Today</h1>
-    <form action="/home" method="POST">
-        <input type="text" name="title" placeholder="Add a to-do">
-        <button>Add</button>
-    </form>
-    <ul>
-        <% for (let p of post) { %> 
-            <li><a href="/home/<%= p._id %>"><%= p.title %> </a></li>
-        <% } %> 
-    </ul>
+    <div class="container">
+        <div class="header">
+            <h1>Today</h1>
+            <form action="/home" method="POST">
+                <input type="text" name="title" placeholder="Add a to-do">
+                <button>Add</button>
+            </form>
+        </div>
+        <div class="body">
+            <ol>
+                <% for (let p of post) { %>
+                    <li><a href="/home/<%= p._id %>">
+                            <%= p.title %>
+                        </a></li>
+                    <% } %>
+            </ol>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
