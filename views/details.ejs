@@ -37,12 +37,11 @@
             background-color: #83c5be;
         }
         .bottom {
-            border-bottom: 1px solid #edf6f9;
             font-size: 30px;
         }
         .todo {
             font-size: 20px;
-            margin: 20px 0 20px 12px;
+            margin: 0px 20px 0px 12px;
         }
         button {
             padding: 5px 15px;
@@ -58,6 +57,14 @@
         form {
             display: inline;
         }
+        .rando {
+            margin: 10px;
+            margin-bottom: 20px;
+            color: #e29578;
+        }
+        hr {
+            color: #edf6f9;
+        }
     </style>
 </head>
 
@@ -67,8 +74,11 @@
             <h1>Today</h1>
         </div>
         <div class="body">
-            <h1 class="bottom">To-do:</h1>
+            <h1 class="bottom">To-do: </h1>
             <h1 class="todo"><%= post.title %></h1>
+            <hr>
+            <p class="rando"><%= Quote.getRandomQuote() %> </p>
+            <hr>
             <button class="back"><a href="/home">Back</a></button>
             <form action="/home/<%= post._id%>?_method=DELETE" method="POST">
                 <button>Delete</button>

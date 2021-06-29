@@ -3,6 +3,7 @@ const app = express()
 const path = require('path')
 const methodOverride = require('method-override')
 const Post = require('./models/posts')
+const Quote = require('inspirational-quotes');
 const mongoose = require('mongoose')
 
 mongoose.connect('mongodb://localhost:27017/post-app', {
@@ -37,7 +38,7 @@ app.post('/home', async (req, res) => {
 
 app.get('/home/:id', async (req, res) => {
     const post = await Post.findById(req.params.id)
-    res.render('details', { post })
+    res.render('details', { post, Quote })
 })
 
 app.delete('/home/:id', async (req, res) => {
