@@ -42,6 +42,7 @@
         .todo {
             font-size: 20px;
             margin: 0px 20px 0px 12px;
+            color: red;
         }
         button {
             padding: 5px 15px;
@@ -50,20 +51,28 @@
             border: none;
             border-radius: 3px;
             cursor: pointer;
+            background-color: gray;
+        }
+        .tooMuch {
+            background-color: #d62828;
+            color: white;
         }
         .back a {
             text-decoration: none;
+            
         }
         form {
             display: inline;
         }
         .rando {
             margin: 10px;
-            margin-bottom: 20px;
-            color: #e29578;
+            color: #edf6f9;
         }
         hr {
             color: #edf6f9;
+        }
+        p {
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -77,11 +86,12 @@
             <h1 class="bottom">To-do: </h1>
             <h1 class="todo"><%= post.title %></h1>
             <hr>
+            <p>Random Motivational Quote:</p>
             <p class="rando"><%= Quote.getRandomQuote() %> </p>
             <hr>
             <button class="back"><a href="/home">Back</a></button>
             <form action="/home/<%= post._id%>?_method=DELETE" method="POST">
-                <button>Delete</button>
+                <button class="tooMuch">Delete</button>
             </form>
         </div>
 
