@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Castoro', serif;
+            background-color: #1d3557;
+        }
+        .container {
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 620px;
+            margin: 50px auto;
+            background-color: #df4759;
+            color: #edf6f9;
+        }
+        h1, p {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><%= err.message %></h1>
+        <p><%= err.stack %></p>
+    </div>
+</body>
+</html>
